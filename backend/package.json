@@ -2,11 +2,11 @@
   "name": "stickers-predictor-backend",
   "version": "1.0.0",
   "private": true,
-  "description": "Secure backend scaffold for a compliant sports information subscription service",
+  "description": "Professional sports analytics subscription backend",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "nodemon server.js"
   },
   "engines": {
     "node": ">=20"
@@ -17,6 +17,16 @@
     "express": "^4.21.2",
     "helmet": "^8.0.0",
     "express-rate-limit": "^7.5.0",
-    "zod": "^3.24.1"
+    "zod": "^3.24.1",
+    "prisma": "^5.8.0",
+    "@prisma/client": "^5.8.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.1.2",
+    "stripe": "^14.11.0",
+    "node-mailgun": "^0.0.1",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
   }
 }

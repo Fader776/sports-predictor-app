@@ -1,0 +1,133 @@
+// This is a Prisma schema. Learn more at https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                String    @id @default(cuid())
+  email             String    @unique
+  name              String
+  passwordHash      String
+  isEmailVerified   Boolean   @default(false)
+  isActive          Boolean   @default(true)
+  loginAttempts     Int       @default(0)
+  lockedUntil       DateTime?
+  subscriptionId    String?
+  subscription      Subscription? @relation(fields: [subscriptionId], references: [id], onDelete: SetNull)
+  orders            Order[]
+  sessions          Session[]
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  @@index([email])
+  @@index([subscriptionId])
+}
+
+model Subscription {
+  id                String    @id @default(cuid())
+  planId            String
+  plan              Plan      @relation(fields: [planId], references: [id], onDelete: Restrict)
+  stripeSubId       String?   @unique
+  status            String    @default("active")
+  currentPeriodEnd  DateTime
+  cancelledAt       DateTime?
+  users             User[]
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  @@index([planId])
+  @@index([status])
+}
+
+model Plan {
+  id                String    @id @default(cuid())
+  name              String
+  slug              String    @unique
+  description       String
+  priceGHS          Int
+  stripePriceId     String?
+  features          String[]
+  tier              Int
+  subscriptions     Subscription[]
+  orders            Order[]
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  @@index([slug])
+}
+
+model Order {
+  id                String    @id @default(cuid())
+  userId            String
+  user              User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  planId            String
+  plan              Plan      @relation(fields: [planId], references: [id], onDelete: Restrict)
+  stripePaymentId   String?   @unique
+  amount            Int
+  currency          String    @default("GHS")
+  status            String    @default("pending")
+  paymentMethod     String
+  receipt           String?
+  failureReason     String?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  @@index([userId])
+  @@index([planId])
+  @@index([status])
+  @@index([stripePaymentId])
+}
+
+model Session {
+  id                String    @id @default(cuid())
+  userId            String
+  user              User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token             String    @unique
+  userAgent         String?
+  ipAddress         String?
+  expiresAt         DateTime
+  createdAt         DateTime  @default(now())
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+model Prediction {
+  id                String    @id @default(cuid())
+  match             String
+  homeTeam          String
+  awayTeam          String
+  prediction        String
+  odds              Float
+  confidence        String
+  analysis          String
+  matchDate         DateTime
+  result            String?
+  isCorrect         Boolean?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  @@index([matchDate])
+  @@index([isCorrect])
+}
+
+model EmailLog {
+  id                String    @id @default(cuid())
+  userId            String?
+  email             String
+  subject           String
+  type              String
+  status            String    @default("sent")
+  error             String?
+  createdAt         DateTime  @default(now())
+
+  @@index([email])
+  @@index([status])
+  @@index([type])
+}
