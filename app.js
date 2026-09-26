@@ -1,3 +1,5 @@
+const API_BASE = window.STICKERS_API_BASE || 'http://localhost:3000';
+
 const modal = document.getElementById('checkoutModal');
 const selectedPlanName = document.getElementById('selectedPlanName');
 const selectedPlanPrice = document.getElementById('selectedPlanPrice');
@@ -7,80 +9,64 @@ const headerCta = document.getElementById('headerCta');
 const planCards = document.querySelectorAll('.plan-card');
 const methodOptions = document.querySelectorAll('.method-option');
 
-let activePlan = {
-  name: 'Starter Plan',
-  price: 'GHS 20',
-  amount: 20,
-};
+let activePlan = { id: 'starter', name: 'Starter Plan', amount: 20, price: 'GHS 20' };
 
-function openCheckout(plan) {
+function openCheckout(plan = activePlan) {
   activePlan = plan;
   selectedPlanName.textContent = plan.name;
   selectedPlanPrice.textContent = `GHS ${plan.amount}`;
   modal.classList.remove('hidden');
+  document.getElementById('fullName')?.focus();
 }
 
 function closeCheckout() {
   modal.classList.add('hidden');
 }
 
-function selectPlan(el) {
-  planCards.forEach((card) => card.classList.remove('selected'));
-  el.classList.add('selected');
-
-  const plan = {
-    name: el.dataset.name,
-    amount: Number(el.dataset.plan),
+function selectPlan(card) {
+  planCards.forEach((item) => item.classList.remove('selected'));
+  card.classList.add('selected');
+  activePlan = {
+    id: card.dataset.id || card.dataset.name.toLowerCase().replace(/ plan$/, '').replace(/\s+/g, '-'),
+    name: card.dataset.name,
+    amount: Number(card.dataset.plan),
+    price: `GHS ${Number(card.dataset.plan)}`
   };
-
-  activePlan = { ...plan, price: `GHS ${plan.amount}` };
-  selectedPlanName.textContent = plan.name;
-  selectedPlanPrice.textContent = `GHS ${plan.amount}`;
 }
 
 planCards.forEach((card) => {
-  card.addEventListener('click', (event) => {
-    if (event.target.closest('.plan-btn') || event.target.closest('.plan-card')) {
-      selectPlan(card);
-      openCheckout(activePlan);
-    }
+  card.addEventListener('click', () => {
+    selectPlan(card);
+    openCheckout();
   });
 });
 
 document.querySelectorAll('[data-target]').forEach((button) => {
   button.addEventListener('click', () => {
-    const targetId = button.dataset.target;
-    const target = document.getElementById(targetId);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    document.getElementById(button.dataset.target)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
-copyNumberBtn.addEventListener('click', async () => {
+document.querySelectorAll('.primary-btn').forEach((button) => {
+  if (button.textContent.toLowerCase().includes('unlock')) button.addEventListener('click', () => openCheckout());
+});
+
+copyNumberBtn?.addEventListener('click', async () => {
   const number = '0534185665';
   try {
     await navigator.clipboard.writeText(number);
     copyNumberBtn.textContent = 'COPIED';
-    setTimeout(() => {
-      copyNumberBtn.textContent = 'COPY';
-    }, 1200);
-  } catch (error) {
-    alert('Payment number: 0534185665');
+    setTimeout(() => { copyNumberBtn.textContent = 'COPY'; }, 1200);
+  } catch {
+    alert(`Payment number: ${number}`);
   }
 });
 
-headerCta.addEventListener('click', () => {
-  openCheckout(activePlan);
+headerCta?.addEventListener('click', () => openCheckout());
+modal?.addEventListener('click', (event) => {
+  if (event.target.dataset.close === 'true') closeCheckout();
 });
-
-modal.addEventListener('click', (event) => {
-  if (event.target.dataset.close === 'true') {
-    closeCheckout();
-  }
-});
-
-document.getElementById('closeModal').addEventListener('click', closeCheckout);
+document.getElementById('closeModal')?.addEventListener('click', closeCheckout);
 
 methodOptions.forEach((option) => {
   option.addEventListener('click', () => {
@@ -90,39 +76,62 @@ methodOptions.forEach((option) => {
   });
 });
 
-checkoutForm.addEventListener('submit', (event) => {
-  event.preventDefault();
+function showNotice(message, kind = 'info') {
+  const notice = document.createElement('div');
+  notice.setAttribute('role', 'status');
+  notice.className = `fixed bottom-5 left-1/2 -translate-x-1/2 z-[100] max-w-[90vw] rounded-xl px-4 py-3 text-sm shadow-lg ${kind === 'error' ? 'bg-red-600 text-white' : 'bg-brand text-black'}`;
+  notice.textContent = message;
+  document.body.appendChild(notice);
+  setTimeout(() => notice.remove(), 5000);
+}
 
-  const formData = new FormData(checkoutForm);
-  const method = formData.get('method');
+checkoutForm?.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const submitButton = checkoutForm.querySelector('button[type="submit"]');
   const fullName = document.getElementById('fullName').value.trim();
   const email = document.getElementById('email').value.trim();
 
   if (!fullName || !email) {
-    alert('Please fill in your name and email address.');
+    showNotice('Please enter your name and a valid email address.', 'error');
     return;
   }
 
-  const paymentMessage = `Payment confirmed for ${activePlan.name} (${activePlan.price}) via ${method.toUpperCase()}.`;
-  alert(paymentMessage + '\nA confirmation email will be sent to ' + email + '.');
-  closeCheckout();
-  checkoutForm.reset();
-  methodOptions.forEach((item) => {
-    item.classList.remove('selected');
-  });
-  const firstOption = methodOptions[0];
-  firstOption.classList.add('selected');
-  firstOption.querySelector('input').checked = true;
+  submitButton.disabled = true;
+  submitButton.textContent = 'Creating secure checkout…';
+
+  try {
+    const response = await fetch(`${API_BASE}/api/checkout/session`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ planId: activePlan.id, fullName, email })
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || 'Could not create checkout session.');
+
+    if (result.checkoutUrl) {
+      window.location.assign(result.checkoutUrl);
+    } else {
+      showNotice(result.message || 'Sandbox mode: no payment was collected.');
+      closeCheckout();
+    }
+  } catch (error) {
+    showNotice(error.message || 'Checkout is currently unavailable.', 'error');
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = 'Continue to secure checkout';
+  }
 });
 
 window.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
-    closeCheckout();
-  }
+  if (event.key === 'Escape' && !modal.classList.contains('hidden')) closeCheckout();
 });
 
 window.addEventListener('load', () => {
   selectedPlanName.textContent = activePlan.name;
   selectedPlanPrice.textContent = activePlan.price;
-});
 
+  const disclaimer = document.createElement('div');
+  disclaimer.className = 'max-w-6xl mx-auto px-4 py-3 text-center text-xs text-gray-300 bg-white/5 border-x border-b border-white/10';
+  disclaimer.textContent = 'Information only — no guaranteed outcomes. This demo checkout does not collect money. Check local laws before launch.';
+  document.querySelector('header')?.insertAdjacentElement('afterend', disclaimer);
+});
