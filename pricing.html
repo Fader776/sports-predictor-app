@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SportIQ Analytics | Pricing & Plans</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: '#22c55e',
+              dark: '#08120d',
+              panel: '#101d17'
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .glass { background: rgba(16,29,23,0.8); border: 1px solid rgba(255,255,255,0.06); }
+    </style>
+  </head>
+  <body class="bg-dark text-white">
+    <header class="sticky top-0 z-40 border-b border-white/10 bg-dark/80 backdrop-blur">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-brand text-black font-black flex items-center justify-center">S</div>
+          <div class="hidden sm:block">
+            <div class="text-[10px] uppercase tracking-[0.28em] text-brand/80">Analytics</div>
+            <div class="font-black text-lg">SportIQ</div>
+          </div>
+        </div>
+        <nav class="hidden md:flex items-center gap-6 text-sm text-gray-300">
+          <a href="index.html" class="hover:text-brand transition">Home</a>
+          <a href="index.html#features" class="hover:text-brand transition">Features</a>
+          <a href="index.html#faq" class="hover:text-brand transition">FAQ</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <a href="login.html" class="text-sm text-gray-300 hover:text-brand">Sign in</a>
+          <button class="rounded-full bg-brand text-black font-bold px-4 py-2">Get started</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="max-w-7xl mx-auto px-4 py-20">
+        <div class="text-center mb-16">
+          <p class="text-[11px] uppercase tracking-[0.27em] text-brand">Transparent pricing</p>
+          <h1 class="text-4xl md:text-6xl font-black mt-4">Choose your plan</h1>
+          <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">Flexible subscriptions designed for football analysts at every level</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+          <div class="glass rounded-[28px] p-6">
+            <h3 class="text-2xl font-black">Starter</h3>
+            <div class="mt-2 text-sm text-gray-400">For hobbyists</div>
+            <div class="mt-6 text-4xl font-black text-brand">$12<span class="text-lg">/mo</span></div>
+            <button class="w-full mt-6 rounded-full bg-brand text-black font-bold py-3">Choose Starter</button>
+            <ul class="mt-6 space-y-3 text-sm">
+              <li class="flex items-center gap-2"><span class="text-brand">✓</span> 5 report packs</li>
+              <li class="flex items-center gap-2"><span class="text-brand">✓</span> Weekly digest</li>
+              <li class="flex items-center gap-2"><span class="text-brand">✓</span> Community access</li>
+              <li class="flex items-center gap-2"><span class="text-gray-600">✗</span> <span class="text-gray-600">Tactical breakdowns</span></li>
+            </ul>
+          </div>
+
+          <div class="glass rounded-[28px] p-6">
+            <h3 class="text-2xl font-black">Pro</h3>
+            <div class="mt-2 text-sm text-gray-400">Most popular</div>
+            <div class="mt-6 text-4xl font-black text-brand">$29<span class="text-lg">/mo</span></div>
+            <button class="w-full mt-6 rounded-full bg-brand text-black font-bold py-3">Choose Pro</button>
+            <ul class="mt-6 space-y-3 text-sm">
+              <li class="flex items-center gap-2"><span class="text-brand">✓</span> 30 report packs</li>
+              <li class="flex items-center gap-2"><span class="text-brand">✓</span> Tactical breakdowns</li>
+              <li class="flex items-center gap-2"><span class="text-brand">✓</span> Full trend library</li>
+              <li class="flex items-center gap-2"><span class="text-brand">✓</span> Priority support</li>
+            </ul>
+          </div>
+
+          <div class="glass rounded-[28px] p-6 ring-2 ring-brand">
+            <div class="inline-flex rounded-full bg-brand/20 text-brand px-3 py-1 text-xs font-bold uppercase tracking-wider">Best value</div>
+            <h3 class="text-2xl font-black mt-4">Analyst</h3>
+            <div class="mt-2 text-sm text-gray-400">For serious analysts</div>
+            <div class="mt-6 text-4xl font-black text-brand">$49<span class="text-lg">/mo</span></div>
+            <button class="w-full mt-6 rounded-full bg-brand text-black font-bold py-3">Choose Analyst</button>
+            <ul class="mt-6 space-y-3 text-sm">
+              <li class="flex items-center gap-2"><span class="text-brand">✓</span> Unlimited reports</li>
+              <li class="flex items-center gap-2"><span class="text-brand">✓</span> Advanced xG models</li>
+              <li class="flex items-center gap-2"><span class="text-brand">✓</span> Weekly video notes</li>
+              <li class="flex items-center gap-2"><span class="text-brand">✓</span> Early access features</li>
+            </ul>
+          </div>
+
+          <div class="glass rounded-[28px] p-6">
+            <h3 class="text-2xl font-black">VIP</h3>
+            <div class="mt-2 text-sm text-gray-400">Premium support</div>
+            <div class="mt-6 text-4xl font-black text-brand">$99<span class="text-lg">/mo</span></div>
+            <button class="w-full mt-6 rounded-full bg-brand text-black font-bold py-3">Choose VIP</button>
+            <ul class="mt-6 space-y-3 text-sm">
+              <li class="flex items-center gap-2"><span class="text-brand">✓</span> Everything in Analyst</li>
+              <li class="flex items-center gap-2"><span class="text-brand">✓</span> Strategy sessions</li>
+              <li class="flex items-center gap-2"><span class="text-brand">✓</span> Private group access</li>
+              <li class="flex items-center gap-2"><span class="text-brand">✓</span> Direct support</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[#0a1410] border-y border-white/10 py-20">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-5xl font-black">Frequently asked</h2>
+          </div>
+
+          <div class="max-w-3xl mx-auto space-y-4">
+            <details class="glass rounded-2xl p-6" open>
+              <summary class="cursor-pointer font-bold flex items-center justify-between">Can I cancel my subscription anytime? <span>+</span></summary>
+              <p class="mt-4 text-gray-300">Yes. You can cancel your subscription before your next billing cycle. No penalties or hidden fees.</p>
+            </details>
+            <details class="glass rounded-2xl p-6">
+              <summary class="cursor-pointer font-bold flex items-center justify-between">Do you offer annual billing? <span>+</span></summary>
+              <p class="mt-4 text-gray-300">Contact our support team for annual billing options and discounts on longer commitments.</p>
+            </details>
+            <details class="glass rounded-2xl p-6">
+              <summary class="cursor-pointer font-bold flex items-center justify-between">What payment methods do you accept? <span>+</span></summary>
+              <p class="mt-4 text-gray-300">We accept all major credit cards (Visa, Mastercard, American Express) and digital wallets via Stripe.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-400">
+        <div>© 2026 SportIQ Analytics</div>
+        <div class="flex gap-5">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Support</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

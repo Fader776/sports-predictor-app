@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SportIQ Analytics | Member Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: '#22c55e',
+              dark: '#08120d',
+              panel: '#101d17'
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .glass { background: rgba(16,29,23,0.8); border: 1px solid rgba(255,255,255,0.06); }
+    </style>
+  </head>
+  <body class="bg-dark text-white min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-md">
+      <div class="text-center mb-8">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-brand text-black font-black text-lg mb-4">S</div>
+        <h1 class="text-3xl font-black">SportIQ Analytics</h1>
+        <p class="text-gray-400 text-sm mt-2">Premium football intelligence</p>
+      </div>
+
+      <div class="glass rounded-[28px] p-8">
+        <h2 class="text-2xl font-black mb-6">Member login</h2>
+
+        <form id="loginForm" class="space-y-4">
+          <div>
+            <label for="email" class="block text-sm font-semibold text-gray-300 mb-2">Email address</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="your@email.com"
+              class="w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-white outline-none focus:border-brand focus:bg-black/50"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="password" class="block text-sm font-semibold text-gray-300 mb-2">Password</label>
+            <input
+              id="password"
+              type="password"
+              placeholder="••••••••"
+              class="w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-white outline-none focus:border-brand focus:bg-black/50"
+              required
+            />
+          </div>
+
+          <button type="submit" class="w-full rounded-full bg-brand text-black font-bold py-3 mt-6 hover:bg-green-500 transition">
+            Sign in
+          </button>
+        </form>
+
+        <div class="mt-6 text-center">
+          <p class="text-gray-400 text-sm">
+            No account yet?
+            <a href="index.html" class="text-brand font-semibold hover:underline">Start your subscription</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-6 text-center text-xs text-gray-500">
+        <p>© 2026 SportIQ Analytics. All rights reserved.</p>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('loginForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        alert(`Demo login: ${email}\nIn production, connect to your secure backend.`);
+        // In production: send credentials to secure backend with HTTPS
+      });
+    </script>
+  </body>
+</html>
