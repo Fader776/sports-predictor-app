@@ -1,0 +1,357 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(245, 197, 24, 0.12), transparent 28%),
+    #0b0b0d;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.panel {
+  background: rgba(22, 22, 22, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(245, 197, 24, 0.08), transparent 40%);
+  pointer-events: none;
+}
+
+.primary-btn,
+.secondary-btn,
+.plan-btn {
+  border: none;
+  border-radius: 9999px;
+  font-weight: 800;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #f5c518, #ffd34d);
+  color: #111;
+  padding: 0.9rem 1.4rem;
+  box-shadow: 0 10px 30px rgba(245, 197, 24, 0.28);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.plan-btn:hover,
+#copyNumberBtn:hover,
+#headerCta:hover {
+  transform: translateY(-1px);
+}
+
+.secondary-btn {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.9rem 1.4rem;
+}
+
+.section-title {
+  text-align: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 11px;
+  color: #f5c518;
+  margin-bottom: 0.5rem;
+}
+
+.section-title h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.plan-card {
+  position: relative;
+  background: rgba(17, 17, 20, 0.9);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 28px;
+  padding: 1.4rem;
+  transition: all 0.2s ease;
+}
+
+.plan-card:hover,
+.match-box:hover,
+.payment-box:hover,
+.faq-item:hover {
+  border-color: rgba(245, 197, 24, 0.45);
+  transform: translateY(-3px);
+}
+
+.plan-card.selected {
+  border-color: rgba(245, 197, 24, 0.8);
+  box-shadow: 0 0 0 1px rgba(245, 197, 24, 0.18), 0 15px 35px rgba(245, 197, 24, 0.12);
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(245, 197, 24, 0.12);
+  color: #f5c518;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 197, 24, 0.18);
+}
+
+.tag.accent {
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ade80;
+  border-color: rgba(34, 197, 94, 0.18);
+}
+
+.plan-card h3 {
+  margin-top: 1.2rem;
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.price {
+  margin-top: 0.4rem;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #f5c518;
+}
+
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.2rem 0 1.6rem;
+  display: grid;
+  gap: 0.7rem;
+  color: #d1d5db;
+  font-size: 0.96rem;
+}
+
+.plan-card ul li::before {
+  content: "✓";
+  color: #f5c518;
+  margin-right: 0.6rem;
+  font-weight: 900;
+}
+
+.plan-btn {
+  width: 100%;
+  background: #111;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 0.9rem 1rem;
+}
+
+.match-box,
+.payment-box,
+.faq-item {
+  border-radius: 24px;
+  padding: 1.4rem;
+  transition: all 0.2s ease;
+}
+
+.match-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  padding: 0.9rem 1rem;
+}
+
+.card-floating {
+  position: relative;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.payment-icon {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  font-size: 1.5rem;
+  background: rgba(245, 197, 24, 0.08);
+  border: 1px solid rgba(245, 197, 24, 0.18);
+}
+
+.payment-box h3 {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.payment-box p {
+  margin-top: 0.6rem;
+  color: #d1d5db;
+}
+
+.payment-detail {
+  margin-top: 1.1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: #f5c518;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  color: #f5c518;
+  font-size: 1.4rem;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item p {
+  margin-top: 0.9rem;
+  color: #d1d5db;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 70;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.72);
+}
+
+.modal-card {
+  position: relative;
+  width: min(95vw, 540px);
+  border-radius: 28px;
+  padding: 1.5rem;
+  z-index: 1;
+}
+
+.modal-close {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.selected-plan-box {
+  background: rgba(245, 197, 24, 0.06);
+  border: 1px solid rgba(245, 197, 24, 0.16);
+  border-radius: 18px;
+  padding: 1rem 1.1rem;
+}
+
+#checkoutForm input,
+#checkoutForm textarea {
+  width: 100%;
+  margin-top: 0.5rem;
+  background: rgba(10, 10, 10, 0.9);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  outline: none;
+}
+
+#checkoutForm input:focus,
+#checkoutForm textarea:focus {
+  border-color: rgba(245, 197, 24, 0.65);
+  box-shadow: 0 0 0 2px rgba(245, 197, 24, 0.12);
+}
+
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.3rem;
+}
+
+.method-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: rgba(10,10,10,0.9);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 0.85rem 0.7rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.method-option input {
+  width: auto;
+  margin: 0;
+}
+
+.method-option.selected {
+  border-color: rgba(245, 197, 24, 0.75);
+  background: rgba(245, 197, 24, 0.08);
+}
+
+@media (max-width: 768px) {
+  .payment-methods {
+    grid-template-columns: 1fr;
+  }
+}

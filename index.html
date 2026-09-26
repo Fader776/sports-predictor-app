@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STICKERS PREDICTOR | Legit</title>
+  <meta name="description" content="Professional sports prediction platform with secure payments and verified match picks." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#f5c518',
+            dark: '#0b0b0d',
+            panel: '#161616',
+            soft: '#1d1d1d',
+            accent: '#22c55e'
+          },
+          boxShadow: {
+            glow: '0 0 20px rgba(245,197,24,0.35)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-dark text-white antialiased">
+  <div class="topbar bg-brand text-black text-center py-2 px-4 text-[11px] font-black tracking-wide">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2">
+      <span>MoMo: 0534185665 - Ador Joseph</span>
+      <button id="copyNumberBtn" class="bg-black text-brand px-3 py-1 rounded-full hover:opacity-90 transition">COPY</button>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-40 backdrop-blur bg-dark/90 border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-brand text-black flex items-center justify-center font-black text-lg">S</div>
+        <div>
+          <div class="text-xs uppercase tracking-[0.28em] text-brand/80">Legit Picks</div>
+          <div class="font-black text-lg">STICKERS PREDICTOR</div>
+        </div>
+      </div>
+      <nav class="hidden md:flex items-center gap-8 text-sm text-gray-300">
+        <a href="#plans" class="hover:text-brand transition">Plans</a>
+        <a href="#matches" class="hover:text-brand transition">Matches</a>
+        <a href="#payment" class="hover:text-brand transition">Payments</a>
+        <a href="#faq" class="hover:text-brand transition">FAQ</a>
+      </nav>
+      <button id="headerCta" class="px-5 py-2 rounded-full bg-brand text-black font-bold hover:scale-[1.02] transition">Get Access</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="max-w-6xl mx-auto px-4 py-12 lg:py-20 grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand/40 bg-brand/10 text-brand text-[11px] font-bold uppercase tracking-[0.2em]">
+            <span class="inline-block w-2 h-2 rounded-full bg-brand shadow-glow"></span>
+            100% Real Matches
+          </div>
+          <h1 class="mt-6 text-4xl md:text-6xl font-black leading-tight">
+            Smart betting picks<br />
+            <span class="text-brand">for serious players</span>
+          </h1>
+          <p class="mt-5 max-w-xl text-gray-300 text-lg">
+            High-confidence football predictions backed by live data, team form analysis, and transparent match breakdowns.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <button class="primary-btn" data-target="plans">Start Now</button>
+            <button class="secondary-btn" data-target="matches">View Matches</button>
+          </div>
+
+          <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+            <div class="panel p-4 rounded-2xl border border-white/10">
+              <div class="text-2xl font-black text-brand">88%</div>
+              <div class="text-xs uppercase tracking-[0.2em] text-gray-400">Win Rate</div>
+            </div>
+            <div class="panel p-4 rounded-2xl border border-white/10">
+              <div class="text-2xl font-black text-brand">24/7</div>
+              <div class="text-xs uppercase tracking-[0.2em] text-gray-400">Support</div>
+            </div>
+            <div class="panel p-4 rounded-2xl border border-white/10">
+              <div class="text-2xl font-black text-brand">120+</div>
+              <div class="text-xs uppercase tracking-[0.2em] text-gray-400">Tips</div>
+            </div>
+            <div class="panel p-4 rounded-2xl border border-white/10">
+              <div class="text-2xl font-black text-brand">4.9/5</div>
+              <div class="text-xs uppercase tracking-[0.2em] text-gray-400">Rating</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-floating panel rounded-[30px] p-5 border border-brand/30 shadow-glow">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <div class="text-xs uppercase tracking-[0.2em] text-gray-400">Today’s Leader</div>
+              <div class="mt-1 font-black text-xl">Premium Pack</div>
+            </div>
+            <div class="bg-brand text-black font-black px-3 py-1 rounded-full text-xs">LIVE</div>
+          </div>
+
+          <div class="space-y-3">
+            <div class="match-card">
+              <div class="flex items-center justify-between text-sm text-gray-300">
+                <span>Man City</span>
+                <span class="text-brand font-bold">1.85</span>
+              </div>
+              <div class="mt-2 flex items-center justify-between text-xs text-gray-400">
+                <span>vs. Arsenal</span>
+                <span>Home Win</span>
+              </div>
+            </div>
+
+            <div class="match-card">
+              <div class="flex items-center justify-between text-sm text-gray-300">
+                <span>Inter Milan</span>
+                <span class="text-brand font-bold">2.10</span>
+              </div>
+              <div class="mt-2 flex items-center justify-between text-xs text-gray-400">
+                <span>vs. Napoli</span>
+                <span>Draw/Win</span>
+              </div>
+            </div>
+
+            <div class="match-card">
+              <div class="flex items-center justify-between text-sm text-gray-300">
+                <span>Real Madrid</span>
+                <span class="text-brand font-bold">1.70</span>
+              </div>
+              <div class="mt-2 flex items-center justify-between text-xs text-gray-400">
+                <span>vs. Sevilla</span>
+                <span>1X</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 rounded-2xl bg-[#0a0a0a] border border-brand/20 p-4">
+            <div class="flex items-center justify-between text-sm text-gray-300">
+              <span>Best Value</span>
+              <span class="text-brand font-black">GHS 20</span>
+            </div>
+            <button class="mt-4 w-full primary-btn">Unlock Today’s Picks</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="plans" class="max-w-6xl mx-auto px-4 py-6 md:py-10">
+      <div class="section-title">
+        <p class="eyebrow">Plans</p>
+        <h2>Choose your winning plan</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-5 mt-8">
+        <article class="plan-card selected" data-plan="20" data-name="Starter Plan" data-price="20">
+          <div class="tag">Best for New Users</div>
+          <h3>Starter</h3>
+          <div class="price">GHS 20</div>
+          <ul>
+            <li>2 premium tips</li>
+            <li>Match previews</li>
+            <li>Daily predictions</li>
+            <li>Support access</li>
+          </ul>
+          <button class="plan-btn">Choose Starter</button>
+        </article>
+
+        <article class="plan-card" data-plan="50" data-name="Pro Plan" data-price="50">
+          <div class="tag accent">Popular</div>
+          <h3>Pro</h3>
+          <div class="price">GHS 50</div>
+          <ul>
+            <li>8 premium tips</li>
+            <li>Hot-stake alerts</li>
+            <li>Team analysis</li>
+            <li>Priority support</li>
+          </ul>
+          <button class="plan-btn">Choose Pro</button>
+        </article>
+
+        <article class="plan-card" data-plan="100" data-name="VIP Plan" data-price="100">
+          <div class="tag">Best Value</div>
+          <h3>VIP</h3>
+          <div class="price">GHS 100</div>
+          <ul>
+            <li>20 premium tips</li>
+            <li>VIP group access</li>
+            <li>Cash-out strategy</li>
+            <li>Live analyst updates</li>
+          </ul>
+          <button class="plan-btn">Choose VIP</button>
+        </article>
+
+        <article class="plan-card" data-plan="200" data-name="Elite Plan" data-price="200">
+          <div class="tag accent">Top Tier</div>
+          <h3>Elite</h3>
+          <div class="price">GHS 200</div>
+          <ul>
+            <li>Unlimited access</li>
+            <li>Private strategy calls</li>
+            <li>Weekend multi-bet packs</li>
+            <li>Dedicated consultant</li>
+          </ul>
+          <button class="plan-btn">Choose Elite</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="matches" class="max-w-6xl mx-auto px-4 py-10"> 
+      <div class="section-title">
+        <p class="eyebrow">Live Matches</p>
+        <h2>Today’s recommended picks</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-5 mt-8">
+        <div class="panel match-box">
+          <div class="flex items-center justify-between">
+            <span class="text-gray-400 text-xs uppercase tracking-[0.25em]">14:00</span>
+            <span class="bg-brand/15 text-brand px-2 py-1 text-[10px] font-bold rounded-full">1X</span>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div>
+              <div class="font-bold">Chelsea</div>
+              <div class="text-sm text-gray-400">Home</div>
+            </div>
+            <div class="text-brand font-black">1.75</div>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div>
+              <div class="font-bold">Tottenham</div>
+              <div class="text-sm text-gray-400">Away</div>
+            </div>
+            <div class="text-gray-300">2.05</div>
+          </div>
+          <div class="mt-4 text-sm text-gray-300">Confidence: High</div>
+        </div>
+
+        <div class="panel match-box">
+          <div class="flex items-center justify-between">
+            <span class="text-gray-400 text-xs uppercase tracking-[0.25em]">16:30</span>
+            <span class="bg-brand/15 text-brand px-2 py-1 text-[10px] font-bold rounded-full">Over 2.5</span>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div>
+              <div class="font-bold">Barcelona</div>
+              <div class="text-sm text-gray-400">Home</div>
+            </div>
+            <div class="text-brand font-black">1.92</div>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div>
+              <div class="font-bold">Valencia</div>
+              <div class="text-sm text-gray-400">Away</div>
+            </div>
+            <div class="text-gray-300">2.30</div>
+          </div>
+          <div class="mt-4 text-sm text-gray-300">Confidence: Very High</div>
+        </div>
+
+        <div class="panel match-box">
+          <div class="flex items-center justify-between">
+            <span class="text-gray-400 text-xs uppercase tracking-[0.25em]">18:45</span>
+            <span class="bg-brand/15 text-brand px-2 py-1 text-[10px] font-bold rounded-full">2.10</span>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div>
+              <div class="font-bold">Bayern</div>
+              <div class="text-sm text-gray-400">Home</div>
+            </div>
+            <div class="text-brand font-black">1.48</div>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div>
+              <div class="font-bold">Leipzig</div>
+              <div class="text-sm text-gray-400">Away</div>
+            </div>
+            <div class="text-gray-300">2.70</div>
+          </div>
+          <div class="mt-4 text-sm text-gray-300">Confidence: Strong</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="payment" class="max-w-6xl mx-auto px-4 py-10">
+      <div class="section-title">
+        <p class="eyebrow">Secure Payments</p>
+        <h2>Trusted payment methods</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 mt-8">
+        <div class="panel payment-box">
+          <div class="payment-icon">📱</div>
+          <h3>MoMo</h3>
+          <p>Fast mobile money transfer for instant access.</p>
+          <div class="payment-detail">Account: 0534185665</div>
+        </div>
+        <div class="panel payment-box">
+          <div class="payment-icon">💳</div>
+          <h3>Card</h3>
+          <p>Visa and Mastercard payments processed securely.</p>
+          <div class="payment-detail">SSL secured checkout</div>
+        </div>
+        <div class="panel payment-box">
+          <div class="payment-icon">🏦</div>
+          <h3>Bank Transfer</h3>
+          <p>For bulk plans and institutional access.</p>
+          <div class="payment-detail">Fast verification</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="max-w-6xl mx-auto px-4 py-10">
+      <div class="section-title">
+        <p class="eyebrow">FAQ</p>
+        <h2>Everything you need to know</h2>
+      </div>
+
+      <div class="space-y-4 mt-8">
+        <details class="panel faq-item" open>
+          <summary>How do I receive the prediction package?</summary>
+          <p>Once payment is confirmed, you receive your premium picks instantly via the selected plan and email confirmation.</p>
+        </details>
+        <details class="panel faq-item">
+          <summary>Do you offer support?</summary>
+          <p>Yes. Our support team is available 24/7 via chat and email to assist you with payments and access.</p>
+        </details>
+        <details class="panel faq-item">
+          <summary>Are the matches real and updated?</summary>
+          <p>Our tips are generated from active match analysis and live data updates across high-profile fixtures.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 mt-12">
+    <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-400">
+      <div>© 2026 STICKERS PREDICTOR. All rights reserved.</div>
+      <div class="flex gap-5">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="checkoutModal" class="modal hidden">
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-card panel">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <div class="text-xs uppercase tracking-[0.25em] text-brand">Checkout</div>
+          <h3 class="text-2xl font-black mt-2">Complete payment</h3>
+        </div>
+        <button id="closeModal" class="modal-close">×</button>
+      </div>
+
+      <div class="selected-plan-box mb-5">
+        <div class="text-xs uppercase tracking-[0.2em] text-gray-400">Selected Plan</div>
+        <div class="mt-2 flex items-center justify-between">
+          <span id="selectedPlanName" class="font-bold">Starter Plan</span>
+          <span id="selectedPlanPrice" class="text-brand font-black">GHS 20</span>
+        </div>
+      </div>
+
+      <form id="checkoutForm" class="space-y-4">
+        <div>
+          <label for="fullName" class="text-sm text-gray-300">Full name</label>
+          <input id="fullName" type="text" placeholder="Enter your full name" required />
+        </div>
+
+        <div>
+          <label for="email" class="text-sm text-gray-300">Email address</label>
+          <input id="email" type="email" placeholder="name@example.com" required />
+        </div>
+
+        <div>
+          <label class="text-sm text-gray-300">Payment method</label>
+          <div class="payment-methods mt-2">
+            <label class="method-option selected">
+              <input type="radio" name="method" value="momo" checked />
+              <span>MoMo</span>
+            </label>
+            <label class="method-option">
+              <input type="radio" name="method" value="card" />
+              <span>Card</span>
+            </label>
+            <label class="method-option">
+              <input type="radio" name="method" value="bank" />
+              <span>Bank</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label for="notes" class="text-sm text-gray-300">Extra note</label>
+          <textarea id="notes" rows="3" placeholder="Optional message"></textarea>
+        </div>
+
+        <button type="submit" class="w-full primary-btn">Confirm Payment</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
