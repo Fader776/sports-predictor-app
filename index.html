@@ -1,593 +1,445 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>STICKERS PREDICTOR | Legit</title>
-  <meta name="description" content="Professional sports prediction platform with secure payments and verified match picks." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: '#f5c518',
-            dark: '#0b0b0d',
-            panel: '#161616',
-            soft: '#1d1d1d',
-            accent: '#22c55e'
-          },
-          boxShadow: {
-            glow: '0 0 20px rgba(245,197,24,0.35)'
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SportIQ Analytics | Premium Football Insights</title>
+    <meta name="description" content="Professional football analytics and match insights subscription platform." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: '#22c55e',
+              dark: '#08120d',
+              panel: '#101d17',
+              soft: '#15241d',
+              accent: '#84cc16',
+              gold: '#f5c518'
+            },
+            boxShadow: {
+              glow: '0 0 25px rgba(34,197,94,0.35)'
+            }
           }
         }
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .glass { background: rgba(16,29,23,0.8); border: 1px solid rgba(255,255,255,0.06); }
+      .hero-grid { background-image: linear-gradient(120deg, rgba(34,197,94,0.12), transparent 50%); }
+      .metric-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); }
+      .plan-card { transition: all 0.2s ease; }
+      .plan-card:hover { transform: translateY(-4px); }
+      .selected { border-color: rgba(34,197,94,0.8); box-shadow: 0 0 0 1px rgba(34,197,94,0.12), 0 18px 36px rgba(34,197,94,0.12); }
+      .primary-btn { background: linear-gradient(135deg, #22c55e, #4ade80); color: #04130a; }
+      .secondary-btn { background: transparent; border: 1px solid rgba(255,255,255,0.12); }
+      .toggle-option.selected { border-color: rgba(34,197,94,0.8); background: rgba(34,197,94,0.08); }
+      .modal-backdrop { background: rgba(0,0,0,0.7); }
+      .contrast { color: #d1fae5; }
+    </style>
+  </head>
+  <body class="bg-dark text-white antialiased">
+    <header class="sticky top-0 z-40 border-b border-white/10 bg-dark/80 backdrop-blur">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-brand text-black font-black flex items-center justify-center">S</div>
+          <div>
+            <div class="text-[10px] uppercase tracking-[0.28em] text-brand/80">Analytics</div>
+            <div class="font-black text-lg">SportIQ</div>
+          </div>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-8 text-sm text-gray-300">
+          <a href="#features" class="hover:text-brand transition">Features</a>
+          <a href="#plans" class="hover:text-brand transition">Plans</a>
+          <a href="#analytics" class="hover:text-brand transition">Analytics</a>
+          <a href="#faq" class="hover:text-brand transition">FAQ</a>
+        </nav>
+
+        <button id="headerCta" class="primary-btn px-5 py-2.5 rounded-full font-bold shadow-glow">Get Started</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-grid border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 py-16 lg:py-20 grid lg:grid-cols-[1.15fr_0.85fr] gap-8 items-center">
+          <div>
+            <div class="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 text-brand px-3 py-1 text-[10px] font-bold uppercase tracking-[0.24em]">
+              <span class="w-2 h-2 rounded-full bg-brand"></span>
+              Trusted football intelligence
+            </div>
+
+            <h1 class="mt-6 text-4xl md:text-6xl font-black leading-[1.05]">
+              Premium football analytics<br />
+              for sharper match decisions.
+            </h1>
+
+            <p class="mt-5 max-w-xl text-lg text-gray-300">
+              Access team trends, expected goals, tactical insights, and match breakdowns designed for serious football analysis enthusiasts.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+              <button class="primary-btn px-6 py-3 rounded-full font-bold" data-target="plans">Start subscription</button>
+              <button class="secondary-btn px-6 py-3 rounded-full font-bold text-white" data-target="analytics">View analytics</button>
+            </div>
+
+            <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div class="metric-card rounded-2xl p-4">
+                <div class="text-2xl font-black text-brand">1.2k+</div>
+                <div class="text-[10px] uppercase tracking-[0.2em] text-gray-400 mt-2">Reports</div>
+              </div>
+              <div class="metric-card rounded-2xl p-4">
+                <div class="text-2xl font-black text-brand">92%</div>
+                <div class="text-[10px] uppercase tracking-[0.2em] text-gray-400 mt-2">Subscriber satisfaction</div>
+              </div>
+              <div class="metric-card rounded-2xl p-4">
+                <div class="text-2xl font-black text-brand">24/7</div>
+                <div class="text-[10px] uppercase tracking-[0.2em] text-gray-400 mt-2">Member support</div>
+              </div>
+              <div class="metric-card rounded-2xl p-4">
+                <div class="text-2xl font-black text-brand">4.9/5</div>
+                <div class="text-[10px] uppercase tracking-[0.2em] text-gray-400 mt-2">Average rating</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass rounded-[28px] p-5 shadow-glow">
+            <div class="flex items-center justify-between mb-5">
+              <div>
+                <div class="text-[10px] uppercase tracking-[0.2em] text-gray-400">Featured report</div>
+                <div class="text-xl font-black mt-1">Match Intelligence</div>
+              </div>
+              <div class="bg-brand text-black font-black px-2.5 py-1 rounded-full text-[10px]">LIVE</div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="rounded-2xl border border-white/10 bg-[#0d1a13] p-3">
+                <div class="flex items-center justify-between text-sm text-gray-300">
+                  <span>Manchester City</span>
+                  <span class="text-brand font-bold">xG 2.31</span>
+                </div>
+                <div class="mt-2 flex items-center justify-between text-xs text-gray-400">
+                  <span>vs Arsenal</span>
+                  <span>High pressing efficiency</span>
+                </div>
+              </div>
+
+              <div class="rounded-2xl border border-white/10 bg-[#0d1a13] p-3">
+                <div class="flex items-center justify-between text-sm text-gray-300">
+                  <span>Barcelona</span>
+                  <span class="text-brand font-bold">xG 1.84</span>
+                </div>
+                <div class="mt-2 flex items-center justify-between text-xs text-gray-400">
+                  <span>vs Valencia</span>
+                  <span>Wide-channel overload</span>
+                </div>
+              </div>
+
+              <div class="rounded-2xl border border-white/10 bg-[#0d1a13] p-3">
+                <div class="flex items-center justify-between text-sm text-gray-300">
+                  <span>Inter Milan</span>
+                  <span class="text-brand font-bold">xG 1.58</span>
+                </div>
+                <div class="mt-2 flex items-center justify-between text-xs text-gray-400">
+                  <span>vs Napoli</span>
+                  <span>Compact low block</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 rounded-2xl border border-brand/20 bg-[#0a120d] p-4">
+              <div class="flex items-center justify-between text-gray-300 text-sm">
+                <span>Basic member</span>
+                <span class="text-brand font-black">$12/mo</span>
+              </div>
+              <button class="w-full primary-btn mt-4 px-4 py-3 rounded-full font-bold">Unlock analytics</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center">
+          <p class="text-[11px] uppercase tracking-[0.27em] text-brand">Why SportIQ</p>
+          <h2 class="mt-3 text-3xl md:text-5xl font-black">Analytics built for real football understanding.</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mt-10">
+          <div class="glass rounded-3xl p-6">
+            <div class="w-12 h-12 rounded-2xl bg-brand/10 border border-brand/20 flex items-center justify-center text-2xl">📊</div>
+            <h3 class="mt-5 text-xl font-black">Expected goals</h3>
+            <p class="mt-3 text-gray-300">Track xG, post-shot xG, and shot quality trends across competitions and teams.</p>
+          </div>
+
+          <div class="glass rounded-3xl p-6">
+            <div class="w-12 h-12 rounded-2xl bg-brand/10 border border-brand/20 flex items-center justify-center text-2xl">🧠</div>
+            <h3 class="mt-5 text-xl font-black">Tactical insight</h3>
+            <p class="mt-3 text-gray-300">Review possession build-up, pressing triggers, and pattern-based match tendencies.</p>
+          </div>
+
+          <div class="glass rounded-3xl p-6">
+            <div class="w-12 h-12 rounded-2xl bg-brand/10 border border-brand/20 flex items-center justify-center text-2xl">📈</div>
+            <h3 class="mt-5 text-xl font-black">Trend analysis</h3>
+            <p class="mt-3 text-gray-300">Compare team form, scoring volume, set-piece patterns, and efficiency across weeks.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="plans" class="max-w-7xl mx-auto px-4 py-8">
+        <div class="text-center">
+          <p class="text-[11px] uppercase tracking-[0.27em] text-brand">Plans</p>
+          <h2 class="mt-3 text-3xl md:text-5xl font-black">Choose the level that fits your analysis.</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-5 mt-10">
+          <article class="plan-card glass rounded-[28px] p-5 selected" data-name="Starter" data-plan="12">
+            <div class="inline-flex rounded-full border border-brand/20 bg-brand/10 text-brand px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em]">Beginner</div>
+            <h3 class="mt-5 text-2xl font-black">Starter</h3>
+            <div class="mt-2 text-4xl font-black text-brand">$12</div>
+            <div class="text-gray-400 text-sm">per month</div>
+            <ul class="mt-5 space-y-3 text-sm text-gray-300">
+              <li>• 5 report packs</li>
+              <li>• Weekly stats digest</li>
+              <li>• Match previews</li>
+              <li>• Community access</li>
+            </ul>
+            <button class="w-full mt-6 primary-btn px-4 py-3 rounded-full font-bold">Choose Starter</button>
+          </article>
+
+          <article class="plan-card glass rounded-[28px] p-5" data-name="Pro" data-plan="29">
+            <div class="inline-flex rounded-full border border-brand/20 bg-brand/10 text-brand px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em]">Popular</div>
+            <h3 class="mt-5 text-2xl font-black">Pro</h3>
+            <div class="mt-2 text-4xl font-black text-brand">$29</div>
+            <div class="text-gray-400 text-sm">per month</div>
+            <ul class="mt-5 space-y-3 text-sm text-gray-300">
+              <li>• 30 report packs</li>
+              <li>• Tactical breakdowns</li>
+              <li>• Full trend library</li>
+              <li>• Priority support</li>
+            </ul>
+            <button class="w-full mt-6 primary-btn px-4 py-3 rounded-full font-bold">Choose Pro</button>
+          </article>
+
+          <article class="plan-card glass rounded-[28px] p-5" data-name="Analyst" data-plan="49">
+            <div class="inline-flex rounded-full border border-brand/20 bg-brand/10 text-brand px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em]">Best value</div>
+            <h3 class="mt-5 text-2xl font-black">Analyst</h3>
+            <div class="mt-2 text-4xl font-black text-brand">$49</div>
+            <div class="text-gray-400 text-sm">per month</div>
+            <ul class="mt-5 space-y-3 text-sm text-gray-300">
+              <li>• Unlimited reports</li>
+              <li>• Advanced xG models</li>
+              <li>• Weekly video notes</li>
+              <li>• Early access</li>
+            </ul>
+            <button class="w-full mt-6 primary-btn px-4 py-3 rounded-full font-bold">Choose Analyst</button>
+          </article>
+
+          <article class="plan-card glass rounded-[28px] p-5" data-name="VIP" data-plan="99">
+            <div class="inline-flex rounded-full border border-brand/20 bg-brand/10 text-brand px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em]">Top tier</div>
+            <h3 class="mt-5 text-2xl font-black">VIP</h3>
+            <div class="mt-2 text-4xl font-black text-brand">$99</div>
+            <div class="text-gray-400 text-sm">per month</div>
+            <ul class="mt-5 space-y-3 text-sm text-gray-300">
+              <li>• Everything in Analyst</li>
+              <li>• Strategy sessions</li>
+              <li>• Private member group</li>
+              <li>• Direct analyst support</li>
+            </ul>
+            <button class="w-full mt-6 primary-btn px-4 py-3 rounded-full font-bold">Choose VIP</button>
+          </article>
+        </div>
+      </section>
+
+      <section id="analytics" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center">
+          <p class="text-[11px] uppercase tracking-[0.27em] text-brand">Analytics</p>
+          <h2 class="mt-3 text-3xl md:text-5xl font-black">Match intelligence, week by week.</h2>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-6 mt-10">
+          <div class="glass rounded-3xl p-6">
+            <div class="text-sm uppercase tracking-[0.2em] text-gray-400">Expected Goals</div>
+            <div class="mt-3 text-3xl font-black text-brand">2.31</div>
+            <p class="mt-3 text-gray-300">Manchester City generated an xG profile that emphasized controlled circulation and central overloads.</p>
+          </div>
+          <div class="glass rounded-3xl p-6">
+            <div class="text-sm uppercase tracking-[0.2em] text-gray-400">Set Pieces</div>
+            <div class="mt-3 text-3xl font-black text-brand">48%</div>
+            <div class="mt-3 text-gray-300">Barcelona's attacking threat is increasingly driven by repeated near-post entries and lane switches.</div>
+          </div>
+          <div class="glass rounded-3xl p-6">
+            <div class="text-sm uppercase tracking-[0.2em] text-gray-400">Pressing</div>
+            <div class="mt-3 text-3xl font-black text-brand">73%</div>
+            <div class="mt-3 text-gray-300">Inter Milan's high line created pressure in the middle third but exposed transitions behind the wingbacks.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center">
+          <p class="text-[11px] uppercase tracking-[0.27em] text-brand">FAQ</p>
+          <h2 class="mt-3 text-3xl md:text-5xl font-black">Questions members ask most.</h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto mt-10 space-y-4">
+          <details class="glass rounded-2xl p-5" open>
+            <summary class="cursor-pointer font-bold">What does the subscription include?</summary>
+            <p class="mt-3 text-gray-300">You receive premium football insights, tactical breakdowns, data-driven reports, and weekly analysis packs depending on your plan.</p>
+          </details>
+          <details class="glass rounded-2xl p-5">
+            <summary class="cursor-pointer font-bold">Do you offer a free trial?</summary>
+            <p class="mt-3 text-gray-300">Yes, select plans include a limited trial or sample report library to help you evaluate the platform.</p>
+          </details>
+          <details class="glass rounded-2xl p-5">
+            <summary class="cursor-pointer font-bold">Can I cancel anytime?</summary>
+            <p class="mt-3 text-gray-300">Yes. Memberships can be cancelled before the next billing cycle according to the plan's terms and conditions.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/10 mt-10">
+      <div class="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-400">
+        <div>© 2026 SportIQ Analytics</div>
+        <div class="flex gap-5">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Support</a>
+        </div>
+      </div>
+    </footer>
+
+    <div id="checkoutModal" class="fixed inset-0 z-50 hidden">
+      <div class="modal-backdrop absolute inset-0" data-close="true"></div>
+      <div class="relative max-w-xl mx-auto mt-20 rounded-[28px] bg-[#0d1a13] border border-white/10 p-6 shadow-glow">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="text-[10px] uppercase tracking-[0.24em] text-brand">Subscription</div>
+            <h3 class="text-2xl font-black mt-2">Secure checkout</h3>
+          </div>
+          <button id="closeModal" class="text-2xl text-gray-300">×</button>
+        </div>
+
+        <div class="mt-6 rounded-2xl border border-brand/20 bg-[#13261b] p-4">
+          <div class="text-[10px] uppercase tracking-[0.2em] text-gray-400">Selected plan</div>
+          <div class="mt-2 flex items-center justify-between">
+            <span id="selectedPlanName" class="font-bold">Starter</span>
+            <span id="selectedPlanPrice" class="text-brand font-black">$12</span>
+          </div>
+        </div>
+
+        <form id="checkoutForm" class="mt-6 space-y-4">
+          <div>
+            <label for="fullName" class="block text-sm text-gray-300 mb-2">Full name</label>
+            <input id="fullName" type="text" placeholder="Your full name" class="w-full rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none focus:border-brand" required />
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm text-gray-300 mb-2">Email address</label>
+            <input id="email" type="email" placeholder="your@email.com" class="w-full rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none focus:border-brand" required />
+          </div>
+
+          <div>
+            <label class="block text-sm text-gray-300 mb-2">Payment method</label>
+            <div class="grid grid-cols-3 gap-2">
+              <label class="toggle-option selected rounded-2xl border border-white/10 bg-black/20 px-3 py-3 text-center cursor-pointer">
+                <input type="radio" name="method" value="card" checked class="sr-only" />
+                <span class="text-sm">Card</span>
+              </label>
+              <label class="toggle-option rounded-2xl border border-white/10 bg-black/20 px-3 py-3 text-center cursor-pointer">
+                <input type="radio" name="method" value="bank" class="sr-only" />
+                <span class="text-sm">Bank</span>
+              </label>
+              <label class="toggle-option rounded-2xl border border-white/10 bg-black/20 px-3 py-3 text-center cursor-pointer">
+                <input type="radio" name="method" value="wallet" class="sr-only" />
+                <span class="text-sm">Wallet</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="w-full primary-btn rounded-full px-4 py-3 font-bold">Continue to secure checkout</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const modal = document.getElementById('checkoutModal');
+      const selectedPlanName = document.getElementById('selectedPlanName');
+      const selectedPlanPrice = document.getElementById('selectedPlanPrice');
+      const checkoutForm = document.getElementById('checkoutForm');
+      const headerCta = document.getElementById('headerCta');
+      const planCards = document.querySelectorAll('.plan-card');
+      const methodToggles = document.querySelectorAll('.toggle-option');
+      let activePlan = { name: 'Starter', amount: 12 };
+
+      function updatePlan(card) {
+        planCards.forEach(item => item.classList.remove('selected'));
+        card.classList.add('selected');
+        activePlan = {
+          name: card.dataset.name,
+          amount: Number(card.dataset.plan)
+        };
+        selectedPlanName.textContent = activePlan.name;
+        selectedPlanPrice.textContent = `$${activePlan.amount}`;
       }
-    }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body class="bg-dark text-white antialiased">
-  <div class="topbar bg-brand text-black text-center py-2 px-4 text-[11px] font-black tracking-wide">
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2">
-      <span>MoMo: 0534185665 - Ador Joseph</span>
-      <button id="copyNumberBtn" class="bg-black text-brand px-3 py-1 rounded-full hover:opacity-90 transition">COPY</button>
-    </div>
-  </div>
 
-  <header class="sticky top-0 z-40 backdrop-blur bg-dark/90 border-b border-white/10">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-brand text-black flex items-center justify-center font-black text-lg">S</div>
-        <div>
-          <div class="text-xs uppercase tracking-[0.28em] text-brand/80">Legit Picks</div>
-          <div class="font-black text-lg">STICKERS PREDICTOR</div>
-        </div>
-      </div>
-      <nav class="hidden md:flex items-center gap-8 text-sm text-gray-300">
-        <a href="#plans" class="hover:text-brand transition">Plans</a>
-        <a href="#matches" class="hover:text-brand transition">Matches</a>
-        <a href="#payment" class="hover:text-brand transition">Payments</a>
-        <a href="#faq" class="hover:text-brand transition">FAQ</a>
-      </nav>
-      <button id="headerCta" class="px-5 py-2 rounded-full bg-brand text-black font-bold hover:scale-[1.02] transition">Get Access</button>
-    </div>
-  </header>
+      planCards.forEach(card => {
+        card.addEventListener('click', () => updatePlan(card));
+      });
 
-  <main>
-    <section class="hero">
-      <div class="max-w-6xl mx-auto px-4 py-12 lg:py-20 grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand/40 bg-brand/10 text-brand text-[11px] font-bold uppercase tracking-[0.2em]">
-            <span class="inline-block w-2 h-2 rounded-full bg-brand shadow-glow"></span>
-            100% Real Matches
-          </div>
-          <h1 class="mt-6 text-4xl md:text-6xl font-black leading-tight">
-            Smart betting picks<br />
-            <span class="text-brand">for serious players</span>
-          </h1>
-          <p class="mt-5 max-w-xl text-gray-300 text-lg">
-            High-confidence football predictions backed by live data, team form analysis, and transparent match breakdowns.
-          </p>
+      function openCheckout() {
+        modal.classList.remove('hidden');
+      }
 
-          <div class="mt-8 flex flex-wrap gap-4">
-            <button class="primary-btn" data-target="plans">Start Now</button>
-            <button class="secondary-btn" data-target="matches">View Matches</button>
-          </div>
+      function closeCheckout() {
+        modal.classList.add('hidden');
+      }
 
-          <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
-            <div class="panel p-4 rounded-2xl border border-white/10">
-              <div class="text-2xl font-black text-brand">88%</div>
-              <div class="text-xs uppercase tracking-[0.2em] text-gray-400">Win Rate</div>
-            </div>
-            <div class="panel p-4 rounded-2xl border border-white/10">
-              <div class="text-2xl font-black text-brand">24/7</div>
-              <div class="text-xs uppercase tracking-[0.2em] text-gray-400">Support</div>
-            </div>
-            <div class="panel p-4 rounded-2xl border border-white/10">
-              <div class="text-2xl font-black text-brand">120+</div>
-              <div class="text-xs uppercase tracking-[0.2em] text-gray-400">Tips</div>
-            </div>
-            <div class="panel p-4 rounded-2xl border border-white/10">
-              <div class="text-2xl font-black text-brand">4.9/5</div>
-              <div class="text-xs uppercase tracking-[0.2em] text-gray-400">Rating</div>
-            </div>
-          </div>
-        </div>
+      document.querySelectorAll('[data-target]').forEach(button => {
+        button.addEventListener('click', () => {
+          const target = document.getElementById(button.dataset.target);
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
 
-        <div class="card-floating panel rounded-[30px] p-5 border border-brand/30 shadow-glow">
-          <div class="flex items-center justify-between mb-4">
-            <div>
-              <div class="text-xs uppercase tracking-[0.2em] text-gray-400">Today’s Leader</div>
-              <div class="mt-1 font-black text-xl">Premium Pack</div>
-            </div>
-            <div class="bg-brand text-black font-black px-3 py-1 rounded-full text-xs">LIVE</div>
-          </div>
+      headerCta.addEventListener('click', openCheckout);
+      document.getElementById('closeModal').addEventListener('click', closeCheckout);
+      modal.addEventListener('click', (event) => {
+        if (event.target.dataset.close === 'true') closeCheckout();
+      });
 
-          <div class="space-y-3">
-            <div class="match-card">
-              <div class="flex items-center justify-between text-sm text-gray-300">
-                <span>Man City</span>
-                <span class="text-brand font-bold">1.85</span>
-              </div>
-              <div class="mt-2 flex items-center justify-between text-xs text-gray-400">
-                <span>vs. Arsenal</span>
-                <span>Home Win</span>
-              </div>
-            </div>
+      methodToggles.forEach(option => {
+        option.addEventListener('click', () => {
+          methodToggles.forEach(item => item.classList.remove('selected'));
+          option.classList.add('selected');
+          option.querySelector('input').checked = true;
+        });
+      });
 
-            <div class="match-card">
-              <div class="flex items-center justify-between text-sm text-gray-300">
-                <span>Inter Milan</span>
-                <span class="text-brand font-bold">2.10</span>
-              </div>
-              <div class="mt-2 flex items-center justify-between text-xs text-gray-400">
-                <span>vs. Napoli</span>
-                <span>Draw/Win</span>
-              </div>
-            </div>
+      checkoutForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const fullName = document.getElementById('fullName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        if (!fullName || !email) {
+          alert('Please complete the form.');
+          return;
+        }
+        alert(`Subscription ready: ${activePlan.name} for $${activePlan.amount}.\nThis is a demo checkout only; connect a licensed payment provider before launch.`);
+        closeCheckout();
+        checkoutForm.reset();
+      });
 
-            <div class="match-card">
-              <div class="flex items-center justify-between text-sm text-gray-300">
-                <span>Real Madrid</span>
-                <span class="text-brand font-bold">1.70</span>
-              </div>
-              <div class="mt-2 flex items-center justify-between text-xs text-gray-400">
-                <span>vs. Sevilla</span>
-                <span>1X</span>
-              </div>
-            </div>
-          </div>
+      window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !modal.classList.contains('hidden')) closeCheckout();
+      });
 
-          <div class="mt-6 rounded-2xl bg-[#0a0a0a] border border-brand/20 p-4">
-            <div class="flex items-center justify-between text-sm text-gray-300">
-              <span>Best Value</span>
-              <span class="text-brand font-black">GHS 20</span>
-            </div>
-            <button class="mt-4 w-full primary-btn">Unlock Today’s Picks</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="plans" class="max-w-6xl mx-auto px-4 py-6 md:py-10">
-      <div class="section-title">
-        <p class="eyebrow">Plans</p>
-        <h2>Choose your winning plan</h2>
-      </div>
-
-      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-5 mt-8">
-        <article class="plan-card selected" data-plan="20" data-name="Starter Plan" data-price="20">
-          <div class="tag">Best for New Users</div>
-          <h3>Starter</h3>
-          <div class="price">GHS 20</div>
-          <ul>
-            <li>2 premium tips</li>
-            <li>Match previews</li>
-            <li>Daily predictions</li>
-            <li>Support access</li>
-          </ul>
-          <button class="plan-btn">Choose Starter</button>
-        </article>
-
-        <article class="plan-card" data-plan="50" data-name="Pro Plan" data-price="50">
-          <div class="tag accent">Popular</div>
-          <h3>Pro</h3>
-          <div class="price">GHS 50</div>
-          <ul>
-            <li>8 premium tips</li>
-            <li>Hot-stake alerts</li>
-            <li>Team analysis</li>
-            <li>Priority support</li>
-          </ul>
-          <button class="plan-btn">Choose Pro</button>
-        </article>
-
-        <article class="plan-card" data-plan="100" data-name="VIP Plan" data-price="100">
-          <div class="tag">Best Value</div>
-          <h3>VIP</h3>
-          <div class="price">GHS 100</div>
-          <ul>
-            <li>20 premium tips</li>
-            <li>VIP group access</li>
-            <li>Cash-out strategy</li>
-            <li>Live analyst updates</li>
-          </ul>
-          <button class="plan-btn">Choose VIP</button>
-        </article>
-
-        <article class="plan-card" data-plan="200" data-name="Elite Plan" data-price="200">
-          <div class="tag accent">Top Tier</div>
-          <h3>Elite</h3>
-          <div class="price">GHS 200</div>
-          <ul>
-            <li>Unlimited access</li>
-            <li>Private strategy calls</li>
-            <li>Weekend multi-bet packs</li>
-            <li>Dedicated consultant</li>
-          </ul>
-          <button class="plan-btn">Choose Elite</button>
-        </article>
-      </div>
-    </section>
-
-    <section id="matches" class="max-w-6xl mx-auto px-4 py-10"> 
-      <div class="section-title">
-        <p class="eyebrow">Live Matches</p>
-        <h2>Today’s recommended picks</h2>
-      </div>
-
-      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-5 mt-8">
-        <div class="panel match-box">
-          <div class="flex items-center justify-between">
-            <span class="text-gray-400 text-xs uppercase tracking-[0.25em]">14:00</span>
-            <span class="bg-brand/15 text-brand px-2 py-1 text-[10px] font-bold rounded-full">1X</span>
-          </div>
-          <div class="mt-4 flex items-center justify-between">
-            <div>
-              <div class="font-bold">Chelsea</div>
-              <div class="text-sm text-gray-400">Home</div>
-            </div>
-            <div class="text-brand font-black">1.75</div>
-          </div>
-          <div class="mt-4 flex items-center justify-between">
-            <div>
-              <div class="font-bold">Tottenham</div>
-              <div class="text-sm text-gray-400">Away</div>
-            </div>
-            <div class="text-gray-300">2.05</div>
-          </div>
-          <div class="mt-4 text-sm text-gray-300">Confidence: High</div>
-        </div>
-
-        <div class="panel match-box">
-          <div class="flex items-center justify-between">
-            <span class="text-gray-400 text-xs uppercase tracking-[0.25em]">16:30</span>
-            <span class="bg-brand/15 text-brand px-2 py-1 text-[10px] font-bold rounded-full">Over 2.5</span>
-          </div>
-          <div class="mt-4 flex items-center justify-between">
-            <div>
-              <div class="font-bold">Barcelona</div>
-              <div class="text-sm text-gray-400">Home</div>
-            </div>
-            <div class="text-brand font-black">1.92</div>
-          </div>
-          <div class="mt-4 flex items-center justify-between">
-            <div>
-              <div class="font-bold">Valencia</div>
-              <div class="text-sm text-gray-400">Away</div>
-            </div>
-            <div class="text-gray-300">2.30</div>
-          </div>
-          <div class="mt-4 text-sm text-gray-300">Confidence: Very High</div>
-        </div>
-
-        <div class="panel match-box">
-          <div class="flex items-center justify-between">
-            <span class="text-gray-400 text-xs uppercase tracking-[0.25em]">18:45</span>
-            <span class="bg-brand/15 text-brand px-2 py-1 text-[10px] font-bold rounded-full">2.10</span>
-          </div>
-          <div class="mt-4 flex items-center justify-between">
-            <div>
-              <div class="font-bold">Bayern</div>
-              <div class="text-sm text-gray-400">Home</div>
-            </div>
-            <div class="text-brand font-black">1.48</div>
-          </div>
-          <div class="mt-4 flex items-center justify-between">
-            <div>
-              <div class="font-bold">Leipzig</div>
-              <div class="text-sm text-gray-400">Away</div>
-            </div>
-            <div class="text-gray-300">2.70</div>
-          </div>
-          <div class="mt-4 text-sm text-gray-300">Confidence: Strong</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="payment" class="max-w-6xl mx-auto px-4 py-10">
-      <div class="section-title">
-        <p class="eyebrow">Secure Payments</p>
-        <h2>Trusted payment methods</h2>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-5 mt-8">
-        <div class="panel payment-box">
-          <div class="payment-icon">📱</div>
-          <h3>MoMo</h3>
-          <p>Fast mobile money transfer for instant access.</p>
-          <div class="payment-detail">Account: 0534185665</div>
-        </div>
-        <div class="panel payment-box">
-          <div class="payment-icon">💳</div>
-          <h3>Card</h3>
-          <p>Visa and Mastercard payments processed securely.</p>
-          <div class="payment-detail">SSL secured checkout</div>
-        </div>
-        <div class="panel payment-box">
-          <div class="payment-icon">🏦</div>
-          <h3>Bank Transfer</h3>
-          <p>For bulk plans and institutional access.</p>
-          <div class="payment-detail">Fast verification</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" class="max-w-6xl mx-auto px-4 py-10">
-      <div class="section-title">
-        <p class="eyebrow">FAQ</p>
-        <h2>Everything you need to know</h2>
-      </div>
-
-      <div class="space-y-4 mt-8">
-        <details class="panel faq-item" open>
-          <summary>How do I receive the prediction package?</summary>
-          <p>Once payment is confirmed, you receive your premium picks instantly via the selected plan and email confirmation.</p>
-        </details>
-        <details class="panel faq-item">
-          <summary>Do you offer support?</summary>
-          <p>Yes. Our support team is available 24/7 via chat and email to assist you with payments and access.</p>
-        </details>
-        <details class="panel faq-item">
-          <summary>Are the matches real and updated?</summary>
-          <p>Our tips are generated from active match analysis and live data updates across high-profile fixtures.</p>
-        </details>
-      </div>
-    </section>
-  </main>
-
-  <footer class="border-t border-white/10 mt-12">
-    <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-400">
-      <div>© 2026 STICKERS PREDICTOR. All rights reserved.</div>
-      <div class="flex gap-5">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms</a>
-        <a href="#">Support</a>
-      </div>
-    </div>
-  </footer>
-
-  <div id="checkoutModal" class="modal hidden">
-    <div class="modal-backdrop" data-close="true"></div>
-    <div class="modal-card panel">
-      <div class="flex items-center justify-between mb-6">
-        <div>
-          <div class="text-xs uppercase tracking-[0.25em] text-brand">Checkout</div>
-          <h3 class="text-2xl font-black mt-2">Complete payment</h3>
-        </div>
-        <button id="closeModal" class="modal-close">×</button>
-      </div>
-
-      <div class="selected-plan-box mb-5">
-        <div class="text-xs uppercase tracking-[0.2em] text-gray-400">Selected Plan</div>
-        <div class="mt-2 flex items-center justify-between">
-          <span id="selectedPlanName" class="font-bold">Starter Plan</span>
-          <span id="selectedPlanPrice" class="text-brand font-black">GHS 20</span>
-        </div>
-      </div>
-
-      <form id="checkoutForm" class="space-y-4">
-        <div>
-          <label for="fullName" class="text-sm text-gray-300">Full name</label>
-          <input id="fullName" type="text" placeholder="Enter your full name" required />
-        </div>
-
-        <div>
-          <label for="email" class="text-sm text-gray-300">Email address</label>
-          <input id="email" type="email" placeholder="name@example.com" required />
-        </div>
-
-        <div>
-          <label class="text-sm text-gray-300">Payment method</label>
-          <div class="payment-methods mt-2">
-            <label class="method-option selected">
-              <input type="radio" name="method" value="momo" checked />
-              <span>MoMo</span>
-            </label>
-            <label class="method-option">
-              <input type="radio" name="method" value="card" />
-              <span>Card</span>
-            </label>
-            <label class="method-option">
-              <input type="radio" name="method" value="bank" />
-              <span>Bank</span>
-            </label>
-          </div>
-        </div>
-
-        <div>
-          <label for="notes" class="text-sm text-gray-300">Extra note</label>
-          <textarea id="notes" rows="3" placeholder="Optional message"></textarea>
-        </div>
-
-        <button type="submit" class="w-full primary-btn">Confirm Payment</button>
-      </form>
-    </div>
-  </div>
-
-  <script src="app.js"></script>
-</body>
+      selectedPlanName.textContent = activePlan.name;
+      selectedPlanPrice.textContent = `$${activePlan.amount}`;
+    </script>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

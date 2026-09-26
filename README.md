@@ -1,23 +1,20 @@
-# STICKERS PREDICTOR
+# SportIQ Analytics
 
-A premium sports prediction website front-end with plans, payment methods, and checkout flow.
+A legitimate premium sports analytics subscription platform built as a front-end demo.
 
-## Features
-- Responsive landing page
-- Premium plan cards
-- Live match highlights
-- Payment options section
-- Checkout modal with form validation
-- Copy-to-clipboard MoMo number
+## Overview
+This project presents a premium football analytics experience with:
+- modern landing page
+- pricing plans
+- analytics cards
+- secure checkout modal
+- clear non-deceptive messaging
 
 ## Run locally
 Open `index.html` in a browser.
 
-## Production use
-This is a front-end prototype. For a real business setup, connect a real payment provider such as Stripe, PayPal, or a licensed gateway and add a secure backend.
+## Important production note
+Before live launch, replace the demo checkout with a licensed provider flow, such as Stripe Checkout, and add a secure backend. This front-end is for design and UX testing only.
 
 ## Files
 - `index.html`
-- `styles.css`
-- `app.js`
-
